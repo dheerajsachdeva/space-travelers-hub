@@ -1,38 +1,167 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  position: relative;
+  font-size: 14px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: 100%;
+  padding: 1%;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2%;
+}
+
+.logo-image {
+  max-width: 40px;
+  max-height: 40px;
+}
+
+.logo-name {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.navLinks {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5%;
+}
+
+.link {
+  color: #1f51ff;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #191970;
+  text-decoration: underline;
+}
+
+.flex {
+  display: flex;
+}
+
+.logo img {
+  max-width: 40px;
+  max-height: 40px;
+}
+
+.section1 {
+  justify-content: space-between;
+  width: 100%;
+  padding-right: 3rem;
+}
+
+.links {
+  padding-right: 2rem;
+  text-decoration: none;
+  color: blue;
+}
+
+.active {
+  text-decoration: underline;
+}
+
+.divider {
+  width: 90%;
+  margin-top: 20px;
+  margin-left: 5%;
+}
+
+.rocketsContent {
+  margin-top: 3%;
+  width: 100%;
+}
+
+.rocketsContent li {
+  list-style: none;
+  margin-left: 5%;
+}
+
+.rocketsText {
+  flex-direction: column;
+  width: 70%;
+  margin-left: 2%;
+}
+
+.rocket-image img {
+  width: 300px;
+}
+
+.heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.rocketsText p {
+  margin-top: 10px;
+  text-align: left;
+}
+
+.btn {
+  width: 150px;
+  padding: 10px;
+  font-size: 0.8rem;
+  color: white;
+  background: blue;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #191970;
+}
+
+.reservationCancel-btn {
+  width: 180px;
+  background-color: white;
+  color: grey;
+  border: 1px solid grey;
+}
+
+.reserved {
+  margin-right: 6px;
+  padding: 5px;
+  background-color: blue;
+  border: none;
+  border-radius: 4px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.reserved-rockets {
+  margin-top: 5%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.reserved-list {
+  flex-direction: column;
+  list-style: none;
+  margin-top: 40px;
+}
+
+.reserved-list li {
+  border: 1px solid grey;
+  width: 300px;
+  padding: 10px;
 }
