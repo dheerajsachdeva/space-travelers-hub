@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleJoinMission } from '../redux/missions/missionsSlice';
-// import './styles/MissionTable.css';
+import './styles/MissionTable.css';
 
 const MissionItem = (props) => {
   const dispatch = useDispatch();
