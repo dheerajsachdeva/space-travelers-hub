@@ -1,6 +1,7 @@
 import React from 'react';
 import JoinedMissions from './JoinedMissions';
 import ReservedRockets from './ReserverdRockets';
+import './styles/MyProfile.css';
 
 const MyProfile = () => {
   return (

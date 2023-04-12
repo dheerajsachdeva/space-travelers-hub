@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getMissionsAsync } from '../redux/missions/missionsSlice';
 import MissionItem from './MissionItem';
-// import './styles/MissionTable.css';
+import './styles/MissionTable.css';
 
 const MissionsTable = () => {
   const dispatch = useDispatch();

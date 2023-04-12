@@ -1,32 +1,69 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  position: relative;
+  font-size: 14px;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1%;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2%;
+}
+
+.logo-image {
+  max-width: 40px;
+  max-height: 40px;
+}
+
+.logo-name {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.navLinks {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5%;
+}
+
+.link {
+  color: #1f51ff;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #191970;
+  text-decoration: underline;
 }
 
 .flex {
   display: flex;
 }
 
-.navbar {
-  padding-top: 1%;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 1%;
-}
-
-.logo {
-  margin-left: 5%;
-  display: flex;
-  width: 50%;
- }
-
- .logo h2{
-  font-size: 1.5rem;
-  font-weight: 600;
- }
-
-.logo img{
-  margin-right: 20px;
+.logo img {
+  max-width: 40px;
+  max-height: 40px;
 }
 
 .section1 {
@@ -35,7 +72,7 @@
   padding-right: 3rem;
 }
 
-.links{
+.links {
   padding-right: 2rem;
   text-decoration: none;
   color: blue;
@@ -83,14 +120,18 @@
 
 .btn {
   width: 150px;
-    padding: 10px;
-    font-size: 1rem;
-    color: white;
-    background: blue;
-    border: none;
-    border-radius: 5px;
-    margin-top: 10px;
-    cursor: pointer;
+  padding: 10px;
+  font-size: 0.8rem;
+  color: white;
+  background: blue;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #191970;
 }
 
 .reservationCancel-btn {
@@ -120,7 +161,7 @@
 }
 
 .reserved-list li {
-  border : 1px solid grey;
+  border: 1px solid grey;
   width: 300px;
   padding: 10px;
 }
