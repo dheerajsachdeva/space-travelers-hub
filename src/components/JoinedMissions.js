@@ -4,10 +4,10 @@ import './styles/JoinedMissions.css';
 
 const JoinedMissions = () => {
   const joinedMissions = useSelector((state) => {
-    const missions = state.mission.missions;
-    const joinMission = state.mission.joinMission;
+    const { missions } = state.mission;
+    const { joinMission } = state.mission;
     return missions.filter(
-      (mission) => joinMission[mission.mission_id] === true
+      (mission) => joinMission[mission.mission_id] === true,
     );
   });
 

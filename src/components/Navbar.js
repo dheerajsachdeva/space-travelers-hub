@@ -6,8 +6,8 @@ const Navbar = () => (
   <>
     <nav>
       <p className="logo">
-        <img src={planet} alt="logo" className="logo-image"></img>
-        <span className="logo-name">Space Travelers' Hub</span>
+        <img src={planet} alt="logo" className="logo-image" />
+        <span className="logo-name">Space Travelers&apos; Hub</span>
       </p>
       <div className="navLinks">
         <NavLink className="link" to="/">

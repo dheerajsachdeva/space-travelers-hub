@@ -10,7 +10,7 @@ export const getMissionsAsync = createAsyncThunk(
       return missions;
     }
     return null;
-  }
+  },
 );
 
 const missionsSlice = createSlice({

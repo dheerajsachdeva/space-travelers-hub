@@ -10,7 +10,7 @@ const JoinedMissions = () => (
 
 describe('Joined Missions', () => {
   test('render React component', () => {
-    render(<JoinedMissions/>);
+    render(<JoinedMissions />);
     expect(screen.getByText('Joined')).toBeInTheDocument();
   });
 });

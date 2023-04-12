@@ -10,7 +10,7 @@ const MissionTable = () => (
 
 describe('MissionTable', () => {
   test('render React component', () => {
-    render(<MissionTable/>);
+    render(<MissionTable />);
     expect(screen.getByText('Mission Table')).toBeInTheDocument();
   });
 });

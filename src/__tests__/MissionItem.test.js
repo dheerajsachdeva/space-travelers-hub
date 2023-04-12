@@ -10,7 +10,7 @@ const MissionItem = () => (
 
 describe('MissionItem', () => {
   test('render React component', () => {
-    render(<MissionItem/>);
+    render(<MissionItem />);
     expect(screen.getByText('Mission Item')).toBeInTheDocument();
   });
 });
