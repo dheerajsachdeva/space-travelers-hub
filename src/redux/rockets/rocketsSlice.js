@@ -1,16 +1,14 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const rocketsUrl = `https://api.spacexdata.com/v4/rockets`;
-
+const rocketsUrl = 'https://api.spacexdata.com/v4/rockets';
 
 const initialState = {
   rockets: [],
   isLoading: false,
   isError: false,
-  fetched : false,
+  fetched: false,
 };
-
 
 export const fetchRockets = createAsyncThunk('rockets/fetchRockets', async () => {
   try {
@@ -22,35 +20,36 @@ export const fetchRockets = createAsyncThunk('rockets/fetchRockets', async () =>
 });
 
 export const rocketsSlice = createSlice({
-    name:'rockets',
-    initialState,
-    reducers : {
-      reservation : (state, action)=>{
-        const newState = state.rockets.map((rocket) => {
-          if (rocket.id !== action.payload) return rocket
-          return { ...rocket, reserved: true }
-        })
-        return {
-          ...state,
-          rockets : newState
-        }
-      },
-      reservationCancel : (state, {payload})=>{
-        const newState = state.rockets.map((rocket) => {
-          if (rocket.id !== payload) return rocket
-          return { ...rocket, reserved: false }
-        })
-        return {
-          ...state,
-          rockets : newState
-        }
-      },
+  name: 'rockets',
+  initialState,
+  reducers: {
+    reservation: (state, action) => {
+      const newState = state.rockets.map((rocket) => {
+        if (rocket.id !== action.payload) return rocket;
+        return { ...rocket, reserved: true };
+      });
+      return {
+        ...state,
+        rockets: newState,
+      };
     },
-    extraReducers:(builder) => {
-      builder
-      .addCase(fetchRockets.pending, (state) => {
-        state.isLoading = true;
-      })
+    reservationCancel: (state, { payload }) => {
+      const newState = state.rockets.map((rocket) => {
+        if (rocket.id !== payload) return rocket;
+        return { ...rocket, reserved: false };
+      });
+      return {
+        ...state,
+        rockets: newState,
+      };
+    },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchRockets.pending, (state) => ({
+        ...state,
+        isLoading: true,
+      }))
       .addCase(fetchRockets.fulfilled, (state, action) => {
         const newrockets = [];
         action.payload.map((element) => (
@@ -66,16 +65,17 @@ export const rocketsSlice = createSlice({
           ...state,
           isLoading: false,
           rockets: newrockets,
-          fetched : true,
+          fetched: true,
         });
       })
-      .addCase(fetchRockets.rejected, (state, action) => {
-        state.isLoading = false;
-        state.isError = action.payload;
-      });
-    },
-  });
-  
-  export default rocketsSlice.reducer;
+      .addCase(fetchRockets.rejected, (state, action) => ({
+        ...state,
+        isLoading: false,
+        isError: action.payload,
+      }));
+  },
+});
 
-  export const {reservation, reservationCancel} = rocketsSlice.actions;
+export default rocketsSlice.reducer;
+
+export const { reservation, reservationCancel } = rocketsSlice.actions;

@@ -20,7 +20,7 @@ const MissionsTable = () => {
             <th className="small-column">Mission</th>
             <th className="big-column">Description</th>
             <th className="small-column">Status</th>
-            <th className="small-column"></th>
+            <th className="small-column action">Action</th>
           </tr>
           {missions.map((mission) => (
             <MissionItem

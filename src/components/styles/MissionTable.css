@@ -73,3 +73,7 @@ tr:nth-child(even) {
   border: 1px solid #f00;
   color: #f00;
 }
+
+.action {
+  color: white;
+}

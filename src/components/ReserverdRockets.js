@@ -6,12 +6,13 @@ const ReservedRockets = () => {
   const { rockets } = useSelector((store) => store.rockets);
 
   const reserved = rockets.map((rocket) => {
-    if (rocket.reserved === true)
+    if (rocket.reserved === true) {
       return (
         <li className="list-item" key={rocket.id}>
           {rocket.name}
         </li>
       );
+    } return null;
   });
   return (
     <div className="missions">

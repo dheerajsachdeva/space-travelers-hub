@@ -1,12 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleJoinMission } from '../redux/missions/missionsSlice';
 import './styles/MissionTable.css';
 
-const MissionItem = (props) => {
+const MissionItem = ({ id, name, description }) => {
   const dispatch = useDispatch();
   const joinMission = useSelector(
-    (state) => state.mission.joinMission[props.id]
+    (state) => state.mission.joinMission[id],
   );
 
   const handleJoinMission = (missionId) => {
@@ -21,8 +22,8 @@ const MissionItem = (props) => {
 
   return (
     <tr className="table-row">
-      <td className="mission-name">{props.name}</td>
-      <td>{props.description}</td>
+      <td className="mission-name">{name}</td>
+      <td>{description}</td>
       <td>
         <span className={`membership-status ${membershipStatusClassName}`}>
           {joinMission ? 'Active Member' : 'NOT A MEMBER'}
@@ -31,7 +32,7 @@ const MissionItem = (props) => {
       <td>
         <button
           type="button"
-          onClick={() => handleJoinMission(props.id)}
+          onClick={() => handleJoinMission(id)}
           className={`joinMission-action ${joinMissionStatusClassnName}`}
         >
           {joinMission ? 'Leave Mission' : 'Join Mission'}
@@ -42,3 +43,11 @@ const MissionItem = (props) => {
 };
 
 export default MissionItem;
+
+MissionItem.propTypes = {
+
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+
+};
