@@ -5,15 +5,17 @@ import RocketItem from "./RocketItem";
 
 
 export default function Rockets() {
-    const { rockets, isLoading, isError
+    const { rockets, isLoading, isError, fetched
       } = useSelector((store) => store.rockets);
   const dispatch = useDispatch();
 
   const {reserved} = useSelector((store) => store.rockets.rockets)
 
-    useEffect(() =>{
-    dispatch(fetchRockets());
-  }, []);
+  useEffect(() => {
+    if (!fetched) {
+      dispatch(fetchRockets());
+    }
+  }, [dispatch, fetched]);
 
   if(isLoading){
     return (
