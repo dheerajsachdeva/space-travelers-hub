@@ -8,6 +8,7 @@ const initialState = {
   rockets: [],
   isLoading: false,
   isError: false,
+  fetched : false,
 };
 
 
@@ -65,6 +66,7 @@ export const rocketsSlice = createSlice({
           ...state,
           isLoading: false,
           rockets: newrockets,
+          fetched : true,
         });
       })
       .addCase(fetchRockets.rejected, (state, action) => {
