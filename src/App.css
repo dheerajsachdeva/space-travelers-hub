@@ -1,38 +1,126 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.flex {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+}
+
+.navbar {
+  padding-top: 1%;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  margin-bottom: 1%;
+}
+
+.logo {
+  margin-left: 5%;
+  display: flex;
+  width: 50%;
+ }
+
+ .logo h2{
+  font-size: 1.5rem;
+  font-weight: 600;
+ }
+
+.logo img{
+  margin-right: 20px;
+}
+
+.section1 {
+  justify-content: space-between;
+  width: 100%;
+  padding-right: 3rem;
+}
+
+.links{
+  padding-right: 2rem;
+  text-decoration: none;
+  color: blue;
+}
+
+.active {
+  text-decoration: underline;
+}
+
+.divider {
+  width: 90%;
+  margin-top: 20px;
+  margin-left: 5%;
+}
+
+.rocketsContent {
+  margin-top: 3%;
+  width: 100%;
+}
+
+.rocketsContent li {
+  list-style: none;
+  margin-left: 5%;
+}
+
+.rocketsText {
+  flex-direction: column;
+  width: 70%;
+  margin-left: 2%;
+}
+
+.rocket-image img {
+  width: 300px;
+}
+
+.heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.rocketsText p {
+  margin-top: 10px;
+  text-align: left;
+}
+
+.btn {
+  width: 150px;
+    padding: 10px;
+    font-size: 1rem;
+    color: white;
+    background: blue;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.reservationCancel-btn {
+  width: 180px;
+  background-color: white;
+  color: grey;
+  border: 1px solid grey;
+}
+
+.reserved {
+  margin-right: 6px;
+  padding: 5px;
+  background-color: blue;
+  border: none;
+  border-radius: 4px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.reserved-rockets {
+  margin-top: 5%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.reserved-list {
+  flex-direction: column;
+  list-style: none;
+  margin-top: 40px;
+}
+
+.reserved-list li {
+  border : 1px solid grey;
+  width: 300px;
+  padding: 10px;
 }
