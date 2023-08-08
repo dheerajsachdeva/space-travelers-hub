@@ -7,24 +7,48 @@ const RocketItem = ({ rocket }) => {
   const dispatch = useDispatch();
   return (
     <div className="flex rocketsContent">
-      <li className="flex">
-        <div className="rocket-image"><img alt={rocket.name} src={rocket.flickr_images} /></div>
+      <li className="wraping-div">
+        <div className="rocket-image">
+          <img
+            alt={rocket.name}
+            src={rocket.flickr_images}
+            className="rocket-image"
+          />
+        </div>
         <div className="flex rocketsText">
-          <div className="heading">
+          <p className="heading">
             {rocket.name}
             {' '}
-          </div>
+          </p>
           <p>
-            {rocket.reserved ? <button type="button" className="reserved">Reserved</button> : ''}
+            {rocket.reserved ? (
+              <button type="button" className="reserved">
+                Reserved
+              </button>
+            ) : (
+              ''
+            )}
             {rocket.description}
           </p>
-          {!rocket.reserved && <button type="button" onClick={() => dispatch(reservation(rocket.id))} className="btn reservation-btn">Reserve Rocket</button>}
-          {rocket.reserved && (
-            <button type="button" onClick={() => dispatch(reservationCancel(rocket.id))} className="btn reservationCancel-btn">Cancel Reservation</button>
+          {!rocket.reserved && (
+            <button
+              type="button"
+              onClick={() => dispatch(reservation(rocket.id))}
+              className="btn reservation-btn"
+            >
+              Reserve Rocket
+            </button>
           )}
-
+          {rocket.reserved && (
+            <button
+              type="button"
+              onClick={() => dispatch(reservationCancel(rocket.id))}
+              className="btn reservationCancel-btn"
+            >
+              Cancel Reservation
+            </button>
+          )}
         </div>
-
       </li>
     </div>
   );

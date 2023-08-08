@@ -61,6 +61,11 @@ nav {
   display: flex;
 }
 
+.wraping-div {
+  display: flex;
+  align-items: center;
+}
+
 .logo img {
   max-width: 40px;
   max-height: 40px;
@@ -105,11 +110,13 @@ nav {
 }
 
 .rocket-image img {
-  width: 300px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
 }
 
 .heading {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 600;
 }
 
@@ -119,8 +126,8 @@ nav {
 }
 
 .btn {
-  width: 150px;
-  padding: 10px;
+  padding: 5px 10px;
+  width: 15%;
   font-size: 0.8rem;
   color: white;
   background: blue;
@@ -135,10 +142,15 @@ nav {
 }
 
 .reservationCancel-btn {
-  width: 180px;
+  width: 15%;
   background-color: white;
-  color: grey;
-  border: 1px solid grey;
+  color: red;
+  border: 1px solid red;
+}
+
+.reservationCancel-btn:hover {
+  font-size: 1rem;
+  background-color: #ebe9e9;
 }
 
 .reserved {
@@ -164,4 +176,36 @@ nav {
   border: 1px solid grey;
   width: 300px;
   padding: 10px;
+}
+
+@media (max-width: 759px) {
+  .wraping-div {
+    display: flex;
+    align-items: flex-start;
+    padding: 5px 10px;
+  }
+
+  .rocket-image img {
+    width: 150px;
+    height: 150px;
+    margin-right: 10px;
+  }
+
+  .rocketsContent li {
+    margin-left: 0;
+  }
+
+  .rocketsText {
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .btn,
+  .reservationCancel-btn {
+    padding: 5px 10px;
+    width: 80%;
+    font-size: 0.8rem;
+  }
 }
